@@ -1,0 +1,16 @@
+<div class="position-absolute w-50" style="top: 45%; left:25%">
+  <form (submit)="test()">
+    <div class="input-group">
+      <input 
+        class="form-control" 
+        type="text" 
+        placeholder="Summoner Name" 
+        [(ngModel)]="summonerName"
+        [ngModelOptions]="{standalone: true}"
+      >
+      <div class="input-group-append">
+        <fa-icon class="input-group-text" [icon]="faSearch"></fa-icon>
+      </div>
+    </div>
+  </form>
+</div>
