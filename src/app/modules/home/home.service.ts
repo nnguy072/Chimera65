@@ -28,4 +28,14 @@ export class HomeService {
 
     return this._httpClient.post<any>(testUrl, testDto, this.defaultOptions);
   }
+
+  public getSummonerInfo(summonerName: string): Observable<any> {
+    const urlPath = `${environment.space65.baseUrl}my_summoner`;
+    const requestDto = {
+      headers: new HttpHeaders().set("Accept", "application/json"),
+      params: new HttpParams().set("summonerName", summonerName)
+    }
+
+    return this._httpClient.get<any>(urlPath, requestDto);
+  }
 }

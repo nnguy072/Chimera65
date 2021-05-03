@@ -19,11 +19,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this._searchSubject.pipe(
-      switchMap(() => {
-        return this._homeService
-          .test(this.summonerName)
-          .pipe(takeUntil(this._ngUnsubscribe));
-        }
+        switchMap(() => {
+          return this._homeService
+            .getSummonerInfo(this.summonerName)
+            .pipe(takeUntil(this._ngUnsubscribe));
+          }
       )
     )
     .subscribe(o => {
@@ -33,9 +33,16 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._ngUnsubscribe.next();
+    this._ngUnsubscribe.complete();
   }
 
   test(): void {
+    if (this.summonerName.trim() === "") return;
+
+    this._searchSubject.next();
+  }
+
+  getSummonerInfo(): void {
     if (this.summonerName.trim() === "") return;
 
     this._searchSubject.next();
