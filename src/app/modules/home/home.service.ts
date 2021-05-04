@@ -19,15 +19,6 @@ export class HomeService {
     };
     return defaults;
   }
-  
-  public test(summonerName: string): Observable<any> {
-    const testUrl = `${environment.space65.baseUrl}test`;
-    const testDto = {
-      summonerName: summonerName
-    };
-
-    return this._httpClient.post<any>(testUrl, testDto, this.defaultOptions);
-  }
 
   public getSummonerInfo(summonerName: string): Observable<any> {
     const urlPath = `${environment.space65.baseUrl}my_summoner`;

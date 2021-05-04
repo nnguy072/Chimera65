@@ -29,13 +29,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._ngUnsubscribe.next();
-    this._ngUnsubscribe.complete();
-  }
-
-  test(): void {
-    if (this.summonerName.trim() === "") return;
-
-    this._searchSubject.next();
   }
 
   getSummonerInfo(): void {
