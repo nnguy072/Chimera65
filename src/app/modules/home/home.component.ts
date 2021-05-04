@@ -19,12 +19,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this._searchSubject.pipe(
-        switchMap(() => {
-          return this._homeService
-            .getSummonerInfo(this.summonerName)
-            .pipe(takeUntil(this._ngUnsubscribe));
-          }
-      )
+      switchMap(() => this._homeService.getSummonerInfo(this.summonerName)),
+      takeUntil(this._ngUnsubscribe)
     )
     .subscribe(o => {
       console.log(o);
