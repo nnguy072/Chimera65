@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ScoreBoardComponent } from './components/score-board/score-board.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ScoreBoardComponent
+  ],
   imports: [
     CommonModule
   ],
-  exports: []
+  exports: [
+    ScoreBoardComponent
+  ]
 })
 export class SharedModule { }

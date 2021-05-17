@@ -1,3 +1,4 @@
+import { CurrentMatchModule } from './modules/current-match/current-match.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -19,8 +20,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SharedModule,
     AuthenticationModule,
     InfrastructureModule,
+    FontAwesomeModule,
     HomeModule,
-    FontAwesomeModule
+    CurrentMatchModule
   ],
   providers: [],
   bootstrap: [AppComponent]

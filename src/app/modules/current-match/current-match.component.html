@@ -1,1 +1,9 @@
-<p>current-match works!</p>
+<div *ngIf="!liveMatch" class="text-center centered-spinner">
+  <div class="spinner-border lg-spinner" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="liveMatch">
+  <app-score-board></app-score-board>
+</div>

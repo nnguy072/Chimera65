@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { switchMap, takeUntil } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ILiveMatchModel } from 'src/app/shared/models/live-match.model';
 
 @Component({
   selector: 'app-current-match',
@@ -12,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CurrentMatchComponent implements OnInit {
   private _ngUnsubscribe: Subject<void> = new Subject<void>();
   private _searchSubject = new Subject<string>();
+  public liveMatch?: ILiveMatchModel;
   
   constructor(
     private _currentMatchService: CurrentMatchService, 
@@ -20,12 +22,13 @@ export class CurrentMatchComponent implements OnInit {
 
   ngOnInit(): void {
     this._searchSubject.pipe(
-      switchMap(summonerName => this._currentMatchService.getSummonerInfo(summonerName)),
+      switchMap(summonerName => this._currentMatchService.getLiveMatch(summonerName)),
       takeUntil(this._ngUnsubscribe)
     )
     .subscribe(
       o => {
         console.log("Results: ", o);
+        this.liveMatch = o;
       },
       error => {
         console.log("Error trying to find summoner info", error);
