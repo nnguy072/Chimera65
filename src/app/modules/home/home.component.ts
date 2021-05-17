@@ -1,39 +1,21 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { Subject } from 'rxjs';
-import { HomeService } from './home.service';
-import { switchMap, takeUntil } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
-  private _ngUnsubscribe: Subject<void> = new Subject<void>();
-  private _searchSubject = new Subject<void>();
+export class HomeComponent {
   public summonerName: string = "";
   public faSearch = faSearch;
 
-  constructor(private _homeService: HomeService) { }
-
-  ngOnInit(): void {
-    this._searchSubject.pipe(
-      switchMap(() => this._homeService.getSummonerInfo(this.summonerName)),
-      takeUntil(this._ngUnsubscribe)
-    )
-    .subscribe(o => {
-      console.log(o);
-    });
-  }
-
-  ngOnDestroy(): void {
-    this._ngUnsubscribe.next();
-  }
+  constructor(private _router: Router) { }
 
   getSummonerInfo(): void {
     if (this.summonerName.trim() === "") return;
 
-    this._searchSubject.next();
+    this._router.navigate(["current-match", this.summonerName]);
   }
 }

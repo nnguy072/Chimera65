@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeService {
+export class CurrentMatchService {
   constructor(private _httpClient: HttpClient) { }
 
   get defaultOptions() {
