@@ -27,7 +27,6 @@ export class CurrentMatchComponent implements OnInit {
     )
     .subscribe(
       o => {
-        console.log("Results: ", o);
         this.liveMatch = o;
       },
       error => {

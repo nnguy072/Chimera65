@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ILiveMatchModel } from './../../models/live-match.model';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-score-board',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./score-board.component.scss']
 })
 export class ScoreBoardComponent implements OnInit {
+  @Input() liveMatch?: ILiveMatchModel;
 
   constructor() { }
 
   ngOnInit(): void {
+    if (!this.liveMatch) return;
   }
-
 }

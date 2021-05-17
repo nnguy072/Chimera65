@@ -1,9 +1,11 @@
-<div *ngIf="!liveMatch" class="text-center centered-spinner">
-  <div class="spinner-border lg-spinner" role="status">
-    <span class="sr-only">Loading...</span>
+<div class="p-3">
+  <div *ngIf="!liveMatch" class="text-center centered-spinner">
+    <div class="spinner-border lg-spinner" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
   </div>
-</div>
-
-<div *ngIf="liveMatch">
-  <app-score-board></app-score-board>
+  
+  <div *ngIf="liveMatch">
+    <app-score-board [liveMatch]="liveMatch"></app-score-board>
+  </div>
 </div>

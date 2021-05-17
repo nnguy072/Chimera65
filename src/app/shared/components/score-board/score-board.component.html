@@ -1,1 +1,15 @@
-<p>score-board works!</p>
+<div *ngIf="liveMatch" class="border">
+  <div class="p-2">
+    <b>{{liveMatch.summoner}}</b> | Ranked Solo | Summoner's Rift | 23:39
+  </div>
+  
+  <app-score-board-team 
+    [team]="liveMatch.allies"
+    teamLabel="Allies"
+  ></app-score-board-team>
+  
+  <app-score-board-team 
+    [team]="liveMatch.enemies"
+    teamLabel="Enemies"
+  ></app-score-board-team>
+</div>
