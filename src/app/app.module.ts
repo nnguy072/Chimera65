@@ -1,4 +1,4 @@
-import { CurrentMatchModule } from './modules/current-match/current-match.module';
+import { LiveMatchModule } from './modules/live-match/live-match.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -22,7 +22,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     InfrastructureModule,
     FontAwesomeModule,
     HomeModule,
-    CurrentMatchModule
+    LiveMatchModule
   ],
   providers: [],
   bootstrap: [AppComponent]

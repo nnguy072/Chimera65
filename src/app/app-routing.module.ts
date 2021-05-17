@@ -1,4 +1,4 @@
-import { CurrentMatchComponent } from './modules/current-match/current-match.component';
+import { LiveMatchComponent } from './modules/live-match/live-match.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FullLayoutComponent } from './infrastructure/layouts/full-layout.component';
@@ -13,8 +13,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: "current-match/:summonerName",
-        component: CurrentMatchComponent,
+        path: "live-match/:summonerName",
+        component: LiveMatchComponent,
         canActivate: [AuthGuard]
       },
       {

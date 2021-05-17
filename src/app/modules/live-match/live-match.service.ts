@@ -1,4 +1,4 @@
-import { apiendpoints } from './../../shared/constants/apiendpoints';
+import { apiendpoints } from '../../shared/constants/apiendpoints';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
@@ -8,7 +8,7 @@ import { ILiveMatchModel } from 'src/app/shared/models/live-match.model';
 @Injectable({
   providedIn: 'root'
 })
-export class CurrentMatchService {
+export class LiveMatchService {
   constructor(private _httpClient: HttpClient) { }
 
   get defaultOptions() {

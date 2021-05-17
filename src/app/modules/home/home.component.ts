@@ -16,6 +16,6 @@ export class HomeComponent {
   getSummonerInfo(): void {
     if (this.summonerName.trim() === "") return;
 
-    this._router.navigate(["current-match", this.summonerName]);
+    this._router.navigate(["live-match", this.summonerName]);
   }
 }
