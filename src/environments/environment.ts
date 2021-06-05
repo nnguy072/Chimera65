@@ -5,7 +5,7 @@
 export const environment = {
   name: "local",
   space65: {
-    baseUrl: "http://localhost:3030/"
+    baseUrl: "http://space65.azurewebsites.net/api/v1"
   },
   production: false
 };

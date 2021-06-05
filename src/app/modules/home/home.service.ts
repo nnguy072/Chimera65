@@ -21,7 +21,7 @@ export class HomeService {
   }
 
   public getSummonerInfo(summonerName: string): Observable<any> {
-    const urlPath = `${environment.space65.baseUrl}my_summoner`;
+    const urlPath = `${environment.space65.baseUrl}/live-match`;
     const requestDto = {
       headers: new HttpHeaders().set("Accept", "application/json"),
       params: new HttpParams().set("summonerName", summonerName)
