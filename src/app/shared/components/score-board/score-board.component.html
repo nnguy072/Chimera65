@@ -6,10 +6,14 @@
   <app-score-board-team 
     [team]="liveMatch.allies"
     teamLabel="Allies"
+    [championAssetsUrl]="liveMatch.champion_assets_url"
+    [spellsAssetsUrl]="liveMatch.summoner_spell_assets_url"
   ></app-score-board-team>
   
   <app-score-board-team 
     [team]="liveMatch.enemies"
     teamLabel="Enemies"
+    [championAssetsUrl]="liveMatch.champion_assets_url"
+    [spellsAssetsUrl]="liveMatch.summoner_spell_assets_url"
   ></app-score-board-team>
 </div>

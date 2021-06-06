@@ -33,7 +33,7 @@ export class LiveMatchService {
   }
 
   public getSummonerInfo(summonerName: string): Observable<number> {
-    const urlPath = `${environment.space65.baseUrl}my_summoner`;
+    const urlPath = `${environment.space65.baseUrl}${apiendpoints.space65.getWinPrediction}`;
     const requestDto = {
       headers: new HttpHeaders().set("Accept", "application/json"),
       params: new HttpParams().set("summonerName", summonerName)

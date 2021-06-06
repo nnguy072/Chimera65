@@ -9,6 +9,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ScoreBoardTeamComponent implements OnInit {
   @Input() team: ILiveMatchSummonerModel[] = [];
   @Input() teamLabel: string = "Team";
+  @Input() championAssetsUrl: string = "";
+  @Input() spellsAssetsUrl: string = "";
 
   constructor() { }
 
