@@ -1,19 +1,14 @@
-<div class="d-flex border p-3">
-  <div class="w-10">{{teamLabel}}</div>
-  <div class="w-15">Summoner</div>
-  <div class="w-15">Champion</div>
-</div>
-
-<div *ngFor="let player of team" class="d-flex px-3 py-2">
-  <div class="w-10"></div>
-  <div class="w-15">{{player.summoner}}</div>
-  <div class="d-flex w-25">
-    <div class="d-flex champion">
-      <img src="{{championAssetsUrl+player.champion}}.png">
+<div class="container">
+  <div *ngFor="let player of team" class="row" [class.flex-row-reverse]="teamLabel == 'Enemies'">
+      <div class="col-6">{{player.summoner}}</div>
+      <div class="d-flex col-6">
+        <div class="d-flex champion">
+          <img src="{{championAssetsUrl+player.champion}}.png">
+        </div>
+        <div class="d-flex flex-column spells">
+          <img src="{{spellsAssetsUrl+player.spell_1.asset}}">
+          <img src="{{spellsAssetsUrl+player.spell_2.asset}}">
+        </div>
+      </div>
     </div>
-    <div class="d-flex flex-column spells">
-      <img src="{{spellsAssetsUrl+player.spell_1.asset}}">
-      <img src="{{spellsAssetsUrl+player.spell_2.asset}}">
-    </div>
-  </div>
 </div>

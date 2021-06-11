@@ -6,12 +6,6 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './score-board.component.html',
   styleUrls: ['./score-board.component.scss']
 })
-export class ScoreBoardComponent implements OnInit {
+export class ScoreBoardComponent {
   @Input() liveMatch?: ILiveMatchModel;
-
-  constructor() { }
-
-  ngOnInit(): void {
-    if (!this.liveMatch) return;
-  }
 }

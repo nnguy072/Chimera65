@@ -1,15 +1,11 @@
+import { ISummonerSpellModel } from "./summoner-spell.model";
+
 export interface ILiveMatchSummonerModel {
   champion: string;
   summoner: string;
   profile_icon: string;
-  spell_1: {
-    asset: string,
-    name: string
-  };
-  spell_2: {
-    asset: string,
-    name: string
-  };
+  spell_1: ISummonerSpellModel;
+  spell_2: ISummonerSpellModel;
 }
 
 export interface ILiveMatchModel {
